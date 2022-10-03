@@ -1,8 +1,17 @@
 :root{
-    --primary:#181A1C;
-    --secondary:#232323;
+    --primary:#C8B376;
+    --secondary:#604D29;
     --white:white;
 }
 .custom-main{
     display: flex;
+}
+.show{
+    display: block;
+}
+.hide{
+    display: none;
+}
+.custom-drop-menu{
+    margin-top: 1.5rem;
 }

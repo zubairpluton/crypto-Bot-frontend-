@@ -1,10 +1,11 @@
 import { Link, NavLink } from 'react-router-dom'
 import '../assets/css/sidebar.css'
 import {imageURL, useScript} from '../hooks'
+import CustomDropdown from './CustomDropdown'
 function SideBar()
 {
-    useScript(process.env.PUBLIC_URL+"/jquery.js")
-    useScript(process.env.PUBLIC_URL+"/main.js")
+    // useScript(process.env.PUBLIC_URL+"/jquery.js")
+    // useScript(process.env.PUBLIC_URL+"/main.js")
     return <>
         <aside className='custom-sidebar'>
             <div className="logo-section">
@@ -13,16 +14,13 @@ function SideBar()
             <div className="side-main">
                 <ul className="side-list">
                     <li className='side-link'>
-                        <div className="custom-dropdown">
-                            <Link to={"#"} className="dropdown-toggler"><span>Dashboard</span><span className='icon'>+</span></Link>
-                            <div className="custom-drop-menu">
-                                <ul>
-                                    <li>
-                                        <NavLink to={'/'}>All Activity</NavLink>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
+                        <CustomDropdown title={'Dashboard'}>
+                            <ul>
+                                <li>
+                                    <NavLink to={'/'}>All Activity</NavLink>
+                                </li>
+                            </ul>
+                        </CustomDropdown>
                     </li>
                 </ul>
             </div>
