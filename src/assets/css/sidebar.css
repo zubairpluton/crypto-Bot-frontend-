@@ -1,0 +1,40 @@
+.custom-sidebar{
+    background: #222629;
+    box-shadow: 4px 4px 30px rgba(0, 0, 0, 0.8);
+    width: 250px;
+}
+.custom-sidebar .logo-section{
+    text-align: center;
+    /* border: 1.5px solid #363636; */
+    padding: 1rem 0;
+}
+.custom-sidebar .logo-section .logo{
+    width: 150px;
+}
+.side-main{
+    margin-top: 2rem;
+}
+.side-main .side-list{
+    padding-left: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+.side-main .side-list .side-link{
+    border: 1.5px solid #363636;
+    border-left: none !important;
+    border-right: none !important;
+    display: block;
+    width: 100%;
+}
+.side-main .side-list a{
+    text-decoration: none;
+    font-size: 25px;
+    color: var(--white);
+    font-weight: 500;
+}
+.side-main .side-link{
+
+}
