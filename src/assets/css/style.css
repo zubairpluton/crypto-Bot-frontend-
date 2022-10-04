@@ -1,17 +1,365 @@
-:root{
-    --primary:#C8B376;
-    --secondary:#604D29;
-    --white:white;
+:root {
+    --primary: #C8B376;
+    --secondary: #604D29;
+    --white: white;
+    --green: #17963B;
+    --red: #B00000;
 }
-.custom-main{
+
+body {
+    color: var(--white);
+}
+
+/* width */
+.custom-scroll::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+
+/* Track */
+.custom-scroll::-webkit-scrollbar-track {
+    background: #3D3B3B;
+}
+
+/* Handle */
+.custom-scroll::-webkit-scrollbar-thumb {
+    background: var(--secondary);
+    border-radius: 15px;
+}
+
+/* Handle on hover */
+.custom-scroll::-webkit-scrollbar-thumb:hover {
+    background: var(--secondary);
+}
+
+.custom-main {
     display: flex;
+    overflow: hidden;
+    height: 100vh;
 }
-.show{
+
+.dashboard-main {
+    width: calc(100% - 250px);
+    overflow: auto;
+    background-color: #181A1C;
+}
+
+.section {
+    padding: 2rem 2.5rem;
+}
+
+/* buttons  */
+.custom-btn {
+    padding: 0.3rem 0.8rem;
+    border-radius: 3px;
+}
+
+.secondary-btn {
+    border: 2px solid #808080;
+    background-color: #808080;
+    color: var(--white);
+}
+
+.secondary-btn:hover {
+    opacity: 0.8;
+}
+
+.text-green {
+    color: var(--green);
+}
+
+.text-red {
+    color: var(--red);
+}
+
+.show {
     display: block;
 }
-.hide{
+
+.hide {
     display: none;
 }
-.custom-drop-menu{
+
+.custom-drop-menu {
     margin-top: 1.5rem;
+}
+
+.table1 tr td {
+    color: var(--white);
+    border: none;
+    font-size: 18px;
+    padding: 0 !important;
+    text-align: center;
+}
+
+.td-bg {
+    background-color: #232323;
+    padding: 0.5rem 0.5rem;
+    margin: 0.5rem 0;
+}
+
+.letf-radius {
+    border-radius: 27px 0px 0px 27px !important;
+}
+
+.right-radius {
+    border-radius: 0px 27px 27px 0px !important;
+}
+
+.table1 tr th {
+    color: #545454;
+    border: none;
+    padding: 0.5rem 0.5rem;
+    text-align: center;
+
+}
+
+.head-main {
+    padding: 1rem 0rem;
+}
+
+.head-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.head-section .balance-section span {
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 40px;
+    color: #545454;
+    margin-bottom: 0.5rem;
+    display: inline-block;
+}
+
+.head-section .balance-section .coin-detail {
+    display: flex;
+    align-items: center;
+}
+
+.balance-section .coin-detail img {
+    width: 50px;
+    margin-right: 0.5rem;
+}
+
+.balance-section .coin-detail h3 {
+    font-size: 40px;
+}
+
+.profit-loss-tab ul {
+    padding-left: 0;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+.profit-loss-tab ul li {
+    padding: 0 1rem;
+}
+
+.profit-loss-tab ul li a {
+    text-decoration: none;
+    font-size: 30px;
+    color: var(--white);
+    font-style: normal;
+    font-weight: 500;
+    position: relative;
+}
+
+.profit-loss-tab ul li a.active {
+    color: var(--primary) !important;
+}
+
+.profit-loss-tab ul li a.active::after {
+    position: absolute;
+    content: '';
+    bottom: -10px;
+    left: 0;
+    background-color: var(--secondary);
+    width: 90%;
+    height: 5px;
+}
+
+.profit-loss-tab ul li a.active::before {
+    position: absolute;
+    content: '';
+    bottom: -20px;
+    left: 0;
+    background-color: var(--secondary);
+    width: 60%;
+    height: 5px;
+}
+
+.custom-table tr th {
+    border: none;
+    color: #545454;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.custom-table tr td {
+    color: var(--white);
+    border: none;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 40px;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.custom-switch {
+    justify-content: center !important;
+    display: flex;
+}
+
+.custom-switch .form-check-input:checked {
+    background-color: var(--white) !important;
+    background-image: url('../../../public/images/green-dot.png') !important;
+
+}
+
+.custom-switch .form-check-input {
+    background-image: url('../../../public/images/red-dot.png') !important;
+    border: none !important;
+}
+
+.custom-switch .form-check-input:focus {
+    box-shadow: none !important;
+    border: 1px solid var(--primary) !important;
+}
+
+.boot-custom-dropdown .dropdown-toggle {
+    background-color: unset !important;
+    border: none;
+    color: var(--primary);
+}
+
+.boot-custom-dropdown .dropdown-toggle::after {
+    display: none !important;
+}
+
+.boot-custom-dropdown .dropdown-menu {
+    background-color: var(--secondary);
+}
+
+.boot-custom-dropdown .dropdown-item {
+    padding: 0.1rem 1rem;
+    color: var(--white);
+    line-height: 1.6;
+}
+
+.boot-custom-dropdown .dropdown-item:focus,
+.boot-custom-dropdown .dropdown-item:hover {
+    background-color: var(--primary);
+}
+
+.chart-filter ul {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    padding-left: 0;
+}
+
+.chart-filter ul li {
+    padding: 0 1rem;
+}
+
+.chart-filter ul li a {
+    text-decoration: none;
+    color: #545454;
+}
+
+.chart-filter ul li a:hover {
+    color: var(--primary);
+}
+
+.chart-filter ul li a.active {
+    color: var(--white);
+}
+
+.main-pie-chart .apexcharts-legend.apx-legend-position-right {
+    display: none !important;
+}
+
+.chart-flex {
+    display: flex;
+    align-items: center;
+}
+
+.pie-labels {
+    margin-left: 3rem;
+}
+
+.pie-labels div {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.pie-labels div span {
+    display: inline-block;
+    width: 40px;
+}
+
+.pie-labels div h3 {
+    margin-bottom: 0;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+}
+
+.up-and-down {
+    display: flex;
+    align-items: center;
+    margin: 0.5rem 0;
+}
+
+.up-and-down .inner {
+    display: flex;
+    align-items: center;
+}
+
+.up-and-down .inner:not(:first-child) {
+    margin-left: 2rem;
+}
+
+.up-and-down .inner h5 {
+    margin-bottom: 0;
+    margin-left: 0.5rem;
+}
+
+.box-main .img {
+    width: 150px;
+    height: 40px;
+}
+
+.box-main .custom-box {
+    margin-top: 2rem;
+}
+.flex-center{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.updown{
+    display: flex;
+    align-items: center;
+}
+.updown i{
+    margin-right: 0.5rem;
+}
+.custom-box {
+    background-color: #232323;
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.6);
+    border-radius: 25px;
+    padding: 2rem 2rem;
+}
+.custom-box h6,.custom-box h5{
+    color: #B9B9B9;
+    margin-top: 0.5rem;
+    font-size: 20px;
+}
+.custom-box h3{
+    font-size: 40px;
+    color: var(--primary);
 }
