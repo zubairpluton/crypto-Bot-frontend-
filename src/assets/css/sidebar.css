@@ -4,14 +4,16 @@
     height: 100vh;
     z-index: 1;
     position: relative;
-
 }
 .side-show{
-    width: 250px;
+    width: 300px !important;
 }
 .side-hide{
-    width: 10px;
-    overflow: hidden;
+    width: 0px;
+    /* overflow: hidden; */
+}
+.side-hide .logo-section{
+    display: none !important;
 }
 .custom-sidebar .logo-section{
     text-align: center;
@@ -75,6 +77,9 @@
     font-size: 25px;
     color: var(--white);
     font-weight: 500;
+}
+.side-main .side-list a.active{
+    color: var(--primary);
 }
 .side-main .side-list a:hover{
 color: var(--primary);

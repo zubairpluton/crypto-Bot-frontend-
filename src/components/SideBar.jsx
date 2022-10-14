@@ -10,9 +10,15 @@ function SideBar()
     const [isShow,setIsShow] = useState(true);
     return <>
         <aside className={'custom-sidebar '+(isShow ? 'side-show' : 'side-hide')}>
-            {/* <div className="sidebar-close" onClick={()=>setIsShow(prevIsShow => !prevIsShow)}>
-                <i class="fa-solid fa-chevron-left"></i>
-            </div> */}
+            <div className="sidebar-close" onClick={()=>setIsShow(prevIsShow => !prevIsShow)}>
+                {
+                    isShow ?
+                    <i class="fa-solid fa-chevron-left"></i>
+                    :
+                    <i class="fa-solid fa-chevron-right"></i>
+                }
+                
+            </div>
             <div className="logo-section">
                 <img src={imageURL('logo.png')} alt="Logo" className='logo'/>
             </div>
@@ -42,21 +48,19 @@ function SideBar()
                     <li className='side-link'>
                         <CustomDropdown title={'Admin Profile'}>
                             <ul>
-                                {/* <li>
-                                    <NavLink to={'/'}>All Activity</NavLink>
-                                </li> */}
+                                <li>
+                                    <NavLink to={'/user-management'}>Manage User</NavLink>
+                                </li>
+                                <li>
+                                    <NavLink to={'/api-setting'}>Apis Setting</NavLink>
+                                </li>
                             </ul>
                         </CustomDropdown>
                     </li>
                     <li className="side-link">
-                        <NavLink to={"#"}>Setup Bot</NavLink>
+                        <NavLink to={"/auto-rsi"}>Setup Bot</NavLink>
                     </li>
-                    <li className="side-link">
-                        <NavLink to={"#"}>Automatic</NavLink>
-                    </li>
-                    <li className="side-link">
-                        <NavLink to={"#"}>Trailing</NavLink>
-                    </li>
+                  
                     <li className='side-link'>
                         <CustomDropdown title={'User Support'}>
                             <ul>
@@ -65,6 +69,9 @@ function SideBar()
                                 </li> */}
                             </ul>
                         </CustomDropdown>
+                    </li>
+                    <li className="side-link">
+                        <NavLink to={"/satistics"}>Statistics</NavLink>
                     </li>
                 </ul>
             </div>

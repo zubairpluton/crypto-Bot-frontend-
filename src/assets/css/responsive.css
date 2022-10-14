@@ -62,7 +62,37 @@
 
 /* Extra Small Devices, Phones */
 @media  (max-width : 480px) {
-
+  .section {
+    padding: 2rem 0.5rem;
+}
+.table1{
+  overflow: auto;
+}
+.table1 tr th{
+  white-space: nowrap;
+}
+.balance-section .coin-detail h3 {
+  font-size: 20px;
+}
+.chart-flex{
+  flex-direction: column;
+}
+.profit-loss-tab ul li a{
+  font-size: 20px;
+}
+.custom-box h3{
+  font-size: 20px;
+}
+.primary-head {
+  font-size: 22px;
+}
+.normal-box .inner-main{
+  flex-wrap: wrap;
+}
+.normal-box .inner-main .inner{
+  max-width: 50%;
+  width: 50%;
+}
 }
 
 @media  (max-width : 400px) {
@@ -77,8 +107,13 @@
 
 /* Tablets */
 @media  (max-width : 991px) {
-/* header  */
-
+/* sidebar  */
+.custom-sidebar{
+  position: fixed !important;
+  top: 0;
+  bottom: 0;
+  left: 0;
+}
 
 }
 @media (min-width:992px){

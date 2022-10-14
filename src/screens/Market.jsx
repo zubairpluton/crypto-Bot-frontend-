@@ -9,8 +9,8 @@ function Market() {
         <div className="dashboard-main custom-scroll">
             <div className="section">
                 <Container fluid>
-                    <Row>
-                        <Col lg={6}>
+                    <Row className="gy-5">
+                        <Col lg={6} md={6}>
                             <div className="box-main">
                                 <img src={imageURL('bitcoin.png')} alt="Bitcoin" className="img"/>
                                 <div className="custom-box">
@@ -26,13 +26,13 @@ function Market() {
                                 </div>
                             </div>
                         </Col>
-                        <Col lg={6}>
+                        <Col lg={6} md={6}>
                         <div className="box-main">
-                                <img src={imageURL('tether.png')} alt="Tether" className="img"/>
+                                <img src={imageURL('ethereum.png')} alt="Ethereum" className="img"/>
                                 <div className="custom-box">
                                 <div className="flex-center">
-                                        <img src={imageURL('usdt.png')} alt="Bitcoin" />
-                                        <h6>USDT</h6>
+                                        <img src={imageURL('eth.png')} alt="ETH" />
+                                        <h6>ETH</h6>
                                         <h3>12,589,12</h3>
                                         <div className="updown">
                                             <i class="fa-solid fa-caret-down text-red"></i>
