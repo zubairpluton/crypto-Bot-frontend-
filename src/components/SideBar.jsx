@@ -1,13 +1,13 @@
-import { useState } from 'react'
+import useLocalStorage from 'hooks/useLocalStorage'
+import { useEffect, useState } from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import '../assets/css/sidebar.css'
 import {imageURL, useScript} from '../hooks'
 import CustomDropdown from './CustomDropdown'
 function SideBar()
 {
-    // useScript(process.env.PUBLIC_URL+"/jquery.js")
-    // useScript(process.env.PUBLIC_URL+"/main.js")
     const [isShow,setIsShow] = useState(true);
+
     return <>
         <aside className={'custom-sidebar '+(isShow ? 'side-show' : 'side-hide')}>
             <div className="sidebar-close" onClick={()=>setIsShow(prevIsShow => !prevIsShow)}>
@@ -28,7 +28,10 @@ function SideBar()
                         <CustomDropdown title={'Dashboard'}>
                             <ul>
                                 <li>
-                                    <NavLink to={'/'}>All Activity</NavLink>
+                                    <NavLink  to='/'>Home</NavLink>
+                                </li>
+                                <li>
+                                    <NavLink to={'/activity'}>All Activity</NavLink>
                                 </li>
                                 <li>
                                     <NavLink to={'/portfolio'}>User Portfolio</NavLink>
@@ -72,6 +75,9 @@ function SideBar()
                     </li>
                     <li className="side-link">
                         <NavLink to={"/satistics"}>Statistics</NavLink>
+                    </li>
+                    <li className="side-link">
+                        <NavLink to={"/user/pl-account"}>PL Account</NavLink>
                     </li>
                 </ul>
             </div>

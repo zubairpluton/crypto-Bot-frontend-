@@ -8,6 +8,9 @@ import AddUser from "./Modals/AddUser";
 import BotModal from "./Modals/BotModal";
 import UserSideBar from "./UserSideBar";
 import Questions from "./Questions";
+import PaidHistoryPieChart from "./PaidHistoryPieChart";
+import PaidHistoryTabs from "./PaidHistoryTabs";
+import BotProfitPieChart from "./BotProfitPieChart";
 export{
     Header,
     SideBar,
@@ -18,5 +21,8 @@ export{
     AutoTabs,
     AddUser,
     BotModal,
-    Questions
+    Questions,
+    PaidHistoryPieChart,
+    PaidHistoryTabs,
+    BotProfitPieChart
 }
