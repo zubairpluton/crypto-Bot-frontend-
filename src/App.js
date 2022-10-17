@@ -7,7 +7,7 @@ import { useScript } from './hooks';
 import useLocalStorage from 'hooks/useLocalStorage';
 
 function App() {
-  const [role,setRole] = useLocalStorage('role','');
+  const [role,setRole] = useLocalStorage('role','admin');
   return (
     <main className='custom-main'>
       <BrowserRouter>
