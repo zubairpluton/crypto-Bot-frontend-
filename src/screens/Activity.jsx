@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-function Home() {
+function Activity() {
     const [users,setUsers] = useState(
     [
         {id:1,name:'Naqi',investment:'000000000',profit:'00000',loss:'00000'},
@@ -57,4 +57,4 @@ function Home() {
     </>
 }
 
-export default Home
+export default Activity

@@ -1,20 +1,34 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { NavLink } from "react-router-dom"
 import { Col, Container, Dropdown, Form, Row } from 'react-bootstrap'
 import TradingViewWidget, { Themes } from 'react-tradingview-widget';
-import { PaidHistoryTabs } from "components";
+import { BotProfitPieChart, PaidHistoryTabs } from "components";
 import { imageURL } from "hooks";
+import useLocalStorage from "hooks/useLocalStorage";
 
-function PLAccount() {
+function UserDashboard() {
+    const [role,setRole] = useLocalStorage('role','user');
+    useEffect(()=>{
+        setRole('user')
+    },[role])
     return <>
         <div className="dashboard-main custom-scroll">
             <div className="section">
                 <Container fluid>
-                    <PaidHistoryTabs />
+                <div className="bot-tabs mt-3 mb-5">
+                    <ul className="justify-content-start">
+                        <li>
+                            <a className={"active"} href="#">Binance</a>
+                        </li>
+                        <li>
+                            <a className={""} href="#">KuCoin</a>
+                        </li>
+                    </ul>
+                </div>
                     <Row className="gy-3">
                         <Col lg={12}>
                             <div className="normal-box">
-                                <h3>Running</h3>
+                                <h3>Total Running Bot</h3>
                                 <div className="inner-main">
                                     <div className="inner">
                                         <p className="m-0">Total Profit USDT</p>
@@ -101,6 +115,23 @@ function PLAccount() {
                                 </div>
                             </div>
                         </Col>
+                        <Col lg={12}>
+                            <div className="normal-box mt-4">
+                            
+                                <div className='flex-text-between'>
+                                    <h3 >Asset Allocation</h3>
+                                    <a href='#' className='gray-anchor'>Details</a>
+                                </div>
+                                <div className="chart-main">
+                                    <img src={imageURL('asset-allocation.png')} className="chart-img"/>
+                                </div>
+                            </div>
+                        </Col>
+                        <Col lg={12}>
+                            <div className="normal-box mt-4">
+                                <BotProfitPieChart/>
+                            </div>
+                        </Col>
                     </Row>
                 </Container>
                 <div className="mt-5">
@@ -111,4 +142,4 @@ function PLAccount() {
     </>
 }
 
-export default PLAccount
+export default UserDashboard

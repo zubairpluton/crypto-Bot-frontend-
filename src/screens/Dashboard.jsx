@@ -1,20 +1,85 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { NavLink } from "react-router-dom"
 import { Col, Container, Dropdown, Form, Row } from 'react-bootstrap'
 import TradingViewWidget, { Themes } from 'react-tradingview-widget';
-import { PaidHistoryTabs } from "components";
+import { BotProfitPieChart, PaidHistoryTabs } from "components";
 import { imageURL } from "hooks";
+import useLocalStorage from "hooks/useLocalStorage";
 
-function PLAccount() {
+function Dashboard() {
+    const [role,setRole] = useLocalStorage('role','admin');
+    useEffect(()=>{
+        setRole('admin')
+    },[role])
     return <>
         <div className="dashboard-main custom-scroll">
             <div className="section">
                 <Container fluid>
-                    <PaidHistoryTabs />
-                    <Row className="gy-3">
+                <div className="bot-tabs mt-3 mb-5">
+                    <ul className="justify-content-start">
+                        <li>
+                            <a className={"active"} href="#">Binance</a>
+                        </li>
+                        <li>
+                            <a className={""} href="#">KuCoin</a>
+                        </li>
+                    </ul>
+                </div>
+                <Row className="gy-5">
+                        <Col lg={6} md={6}>
+                            <div className="box-main">
+                                <img src={imageURL('bitcoin.png')} alt="Bitcoin" className="img"/>
+                                <div className="custom-box">
+                                    <div className="flex-center">
+                                        <img src={imageURL('btc.png')} alt="Bitcoin" />
+                                        <h6>BTC</h6>
+                                        <h3>12,589,12</h3>
+                                        <div className="updown">
+                                            <i class="fa-solid fa-caret-up text-green"></i>
+                                            <h5>50,875,05</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </Col>
+                        <Col lg={6} md={6}>
+                        <div className="box-main">
+                                <img src={imageURL('ethereum.png')} alt="Ethereum" className="img"/>
+                                <div className="custom-box">
+                                <div className="flex-center">
+                                        <img src={imageURL('eth.png')} alt="ETH" />
+                                        <h6>ETH</h6>
+                                        <h3>12,589,12</h3>
+                                        <div className="updown">
+                                            <i class="fa-solid fa-caret-down text-red"></i>
+                                            <h5>20,875,05</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </Col>
+                    </Row>
+                    <div className="mt-5 mb-4">
+                <TradingViewWidget
+                           width= "100%"
+                           height= "441"
+                           symbol= "BITSTAMP:BTCUSDT"
+                           interval= "D"
+                           timezone= "Etc/UTC"
+                           theme= "dark"
+                           style= "1"
+                           locale= "en"
+                           toolbar_bg= "rgb(22, 26, 30)"
+                           enable_publishing= {false}
+                           hide_side_toolbar= {false}
+                           allow_symbol_change= {true}
+                           hotlist= {false}
+                    />
+                </div>
+                    <Row className="gy-3 mt-1">
                         <Col lg={12}>
                             <div className="normal-box">
-                                <h3>Running</h3>
+                                <h3>Total Running Bot</h3>
                                 <div className="inner-main">
                                     <div className="inner">
                                         <p className="m-0">Total Profit USDT</p>
@@ -101,6 +166,23 @@ function PLAccount() {
                                 </div>
                             </div>
                         </Col>
+                        <Col lg={12}>
+                            <div className="normal-box mt-4">
+                            
+                                <div className='flex-text-between'>
+                                    <h3 >Asset Allocation</h3>
+                                    <a href='#' className='gray-anchor'>Details</a>
+                                </div>
+                                <div className="chart-main">
+                                    <img src={imageURL('asset-allocation.png')} className="chart-img"/>
+                                </div>
+                            </div>
+                        </Col>
+                        <Col lg={12}>
+                            <div className="normal-box mt-4">
+                                <BotProfitPieChart/>
+                            </div>
+                        </Col>
                     </Row>
                 </Container>
                 <div className="mt-5">
@@ -111,4 +193,4 @@ function PLAccount() {
     </>
 }
 
-export default PLAccount
+export default Dashboard

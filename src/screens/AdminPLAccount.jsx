@@ -5,7 +5,7 @@ import TradingViewWidget, { Themes } from 'react-tradingview-widget';
 import { PaidHistoryTabs } from "components";
 import { imageURL } from "hooks";
 
-function PLAccount() {
+function AdminPLAccount() {
     return <>
         <div className="dashboard-main custom-scroll">
             <div className="section">
@@ -111,4 +111,4 @@ function PLAccount() {
     </>
 }
 
-export default PLAccount
+export default AdminPLAccount

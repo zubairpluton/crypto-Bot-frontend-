@@ -726,3 +726,48 @@ background-color: #161616;
     
     border-bottom: 3px solid #313131;
 }
+.flex-text-between{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.flex-text-between h3{
+    margin: 0;
+}
+.gray-anchor{
+    text-decoration: none;
+    color: #545454;
+}
+.gray-anchor:hover{
+    color: var(--primary);
+}
+.flex-between-chart{
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+}
+.paid-labels .inner span{
+    color: #545454;
+    margin-left: 0.5rem;
+}
+.paid-labels .inner .red{
+    color: #E06161;
+}
+.paid-labels .inner .green{
+    color: #2AB48F;
+}
+.profit-lost-list{
+    display: flex;
+    align-content: center;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+.profit-lost-list .inner{
+    margin-left: 2rem;
+}
+.chart-main{
+    margin-top: 1rem;
+}
+.chart-main .chart-img{
+    width: 100%;
+}
