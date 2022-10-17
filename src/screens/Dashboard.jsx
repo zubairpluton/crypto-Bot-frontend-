@@ -9,7 +9,10 @@ import useLocalStorage from "hooks/useLocalStorage";
 function Dashboard() {
     const [role,setRole] = useLocalStorage('role','admin');
     useEffect(()=>{
-        setRole('admin')
+        if(role == 'user'){
+            setRole('admin')
+            window.location.reload();
+        }
     },[role])
     return <>
         <div className="dashboard-main custom-scroll">
