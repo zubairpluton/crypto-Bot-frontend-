@@ -2,7 +2,7 @@ import { useState } from "react"
 import { NavLink } from "react-router-dom"
 import { Col, Container, Dropdown, Form, Row } from 'react-bootstrap'
 import TradingViewWidget, { Themes } from 'react-tradingview-widget';
-import { PaidHistoryTabs } from "components";
+import { DailyProfit, PaidHistoryTabs, TotalProfit, Winrate } from "components";
 import { imageURL } from "hooks";
 
 function UserProfit() {
@@ -33,7 +33,7 @@ function UserProfit() {
                                     <a href='#' className='gray-anchor'>Updated each hour</a>
                                 </div>
                                 <div className="chart-main">
-                                    <img src={imageURL('total-profit.png')} className="chart-img"/>
+                                    <TotalProfit/>
                                 </div>
                             </div>
                         </Col>
@@ -55,7 +55,7 @@ function UserProfit() {
                                     <a href='#' className='gray-anchor'>Updated on real time</a>
                                 </div>
                                 <div className="chart-main">
-                                    <img src={imageURL('daily-profit.png')} className="chart-img"/>
+                                    <DailyProfit/>
                                 </div>
                             </div>
                         </Col>
@@ -67,7 +67,7 @@ function UserProfit() {
                                     <a href='#' className='gray-anchor'>Updated each hour</a>
                                 </div>
                                 <div className="chart-main">
-                                    <img src={imageURL('winrate.png')} className="chart-img"/>
+                                    <Winrate/>
                                 </div>
                             </div>
                         </Col>

@@ -5,17 +5,19 @@ import { imageURL } from "../../hooks"
 import TradingViewWidget, { Themes } from 'react-tradingview-widget';
 import { AutoTabs, BotModal, Questions } from "../../components";
 import DragScaleBar from '../../components/DragScaleBar'
-
+import RangeSlider from 'react-bootstrap-range-slider';
 function BotConfig() {
     const [show, setShow] = useState(false);
 
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
     const [isOn,setIsOn] = useState(true);
+    const [ value, setValue ] = useState(0); 
     const toggle = () => {
         setIsOn(prevIsOn => !prevIsOn)
         handleClose()
     }
+    
     return <>
         <div className="dashboard-main custom-scroll">
             <div className="section">
@@ -27,7 +29,7 @@ function BotConfig() {
                         id="custom-switch"
                         label=""
                         checked={isOn}
-                        onChange={handleShow}
+                        onChange={isOn ? handleShow : ()=>setIsOn(true)}
                     />
                 </div>
                 <div className="bot-status-filter">
@@ -130,12 +132,10 @@ function BotConfig() {
                                         <span>KuCoin</span>
                                     </div>
                                     <div className="mt-3 drag-main">
-                                    {/* <DragScaleBar/> */}
-                                    <div className="dragger">
-                                        <div className="inner">
-                                            <img src={imageURL('drag.png')} alt="" />
+                                
+                                      <div class="slidecontainer">
+                                        <input type="range" min="1" max="100" value={value} onChange={changeEvent => setValue(changeEvent.target.value)} class="slider" id="myRange"/>
                                         </div>
-                                    </div>
                                     <h5 className="title mt-2">Available Balance KuCoin</h5>
 
                                     </div>

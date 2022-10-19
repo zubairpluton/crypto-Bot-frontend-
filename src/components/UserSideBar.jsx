@@ -20,7 +20,9 @@ function UserSideBar()
                 
             </div>
             <div className="logo-section">
+                <Link to={'/user/dashboard'}>
                 <img src={imageURL('logo.png')} alt="Logo" className='logo'/>
+                </Link>
             </div>
             <div className="side-main custom-scroll">
                 <ul className="side-list">
@@ -49,7 +51,9 @@ function UserSideBar()
                             </ul>
                         </CustomDropdown>
                     </li>
-                    
+                    <li className="side-link">
+                        <NavLink to={"/login"}>Logout</NavLink>
+                    </li>
                 </ul>
             </div>
         </aside>

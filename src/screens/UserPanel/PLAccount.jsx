@@ -2,7 +2,7 @@ import { useState } from "react"
 import { NavLink } from "react-router-dom"
 import { Col, Container, Dropdown, Form, Row } from 'react-bootstrap'
 import TradingViewWidget, { Themes } from 'react-tradingview-widget';
-import { PaidHistoryTabs } from "components";
+import { DailyProfit, PaidHistoryTabs, ProfitDistribution, TotalProfit, Winrate } from "components";
 import { imageURL } from "hooks";
 
 function PLAccount() {
@@ -51,7 +51,8 @@ function PLAccount() {
                                     <a href='#' className='gray-anchor'>Updated each hour</a>
                                 </div>
                                 <div className="chart-main">
-                                    <img src={imageURL('total-profit.png')} className="chart-img"/>
+                                <TotalProfit/>
+
                                 </div>
                             </div>
                         </Col>
@@ -59,7 +60,7 @@ function PLAccount() {
                             <div className="normal-box mt-4">
                                 <div className="chart-filter">
                                     <ul className="ul">
-                                      
+
                                         <li>
                                             <a href="javascript::void(0)" className="active">30 Days</a>
                                         </li>
@@ -73,31 +74,32 @@ function PLAccount() {
                                     <a href='#' className='gray-anchor'>Updated on real time</a>
                                 </div>
                                 <div className="chart-main">
-                                    <img src={imageURL('daily-profit.png')} className="chart-img"/>
+                                <DailyProfit/>
                                 </div>
                             </div>
                         </Col>
                         <Col lg={12}>
                             <div className="normal-box mt-4">
-                            
+
                                 <div className='flex-text-between'>
                                     <h3 >Profit Distribution</h3>
                                     <a href='#' className='gray-anchor'>Updated on real time</a>
                                 </div>
                                 <div className="chart-main">
-                                    <img src={imageURL('profit-distribution.png')} className="chart-img"/>
+                                <ProfitDistribution/>
+
                                 </div>
                             </div>
                         </Col>
                         <Col lg={12}>
                             <div className="normal-box mt-4">
-                            
+
                                 <div className='flex-text-between'>
                                     <h3 >Winrate</h3>
                                     <a href='#' className='gray-anchor'>Updated each hour</a>
                                 </div>
                                 <div className="chart-main">
-                                    <img src={imageURL('winrate.png')} className="chart-img"/>
+                                <Winrate/>
                                 </div>
                             </div>
                         </Col>
