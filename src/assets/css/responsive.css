@@ -62,6 +62,36 @@
 
 /* Extra Small Devices, Phones */
 @media  (max-width : 480px) {
+  .mobile-none{
+    display: none !important;
+  }
+  .flex-text-between h3{
+    font-size: 16px;
+  }
+  .statistic-list li span {
+    font-size: 13px;
+  }
+  .bot-status-filter {
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .bot-status-filter .form-group:not(:first-child){
+    margin-left: 0 !important;
+    max-width: 50%;
+  }
+  .main-flex {
+    flex-direction: column;
+}
+.main-flex .inner {
+  width: 100%;
+}
+.swap-detail {
+  margin-top: 1rem;
+}
+.normal-text-main p {
+  font-size: 20px;
+  line-height: 32px;
+}
   .section {
     padding: 2rem 0.5rem;
 }
@@ -78,7 +108,7 @@
   flex-direction: column;
 }
 .profit-loss-tab ul li a{
-  font-size: 20px;
+  font-size: 14px;
 }
 .custom-box h3{
   font-size: 20px;
@@ -101,7 +131,11 @@
 
 /* Tablets */
 @media  (max-width : 767px) {
- 
+  .chart-filter ul {
+    display: -webkit-box;
+    overflow: auto;
+    padding-bottom: 1rem;
+}
 }
 
 

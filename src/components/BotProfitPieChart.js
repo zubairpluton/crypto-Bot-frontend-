@@ -17,7 +17,7 @@ export default function BotProfitPieChart() {
             breakpoint: 480,
             options: {
                 chart: {
-                    width: 200
+                    width: '100%'
                 },
                 legend: {
                     position: 'bottom'
@@ -42,7 +42,7 @@ export default function BotProfitPieChart() {
             <div id="pie_chart" className='main-pie-chart'>
 
             </div>
-            <div className='paid-labels'>
+            <div className='paid-labels mobile-none'>
                 <div className='inner'>
                     <i class="fa-solid fa-circle red"></i>
                     <span>{labels[1]}</span>
@@ -52,7 +52,7 @@ export default function BotProfitPieChart() {
                     <span>{labels[0]}</span>
                 </div>
             </div>
-            <div className='paid-percent'>
+            <div className='paid-percent mobile-none'>
                 <div className='inner'>
                     <span>20%</span>
                 </div>

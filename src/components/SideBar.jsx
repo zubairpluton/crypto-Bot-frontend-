@@ -20,7 +20,9 @@ function SideBar()
                 
             </div>
             <div className="logo-section">
+                <Link to={'/'}>
                 <img src={imageURL('logo.png')} alt="Logo" className='logo'/>
+                </Link>
             </div>
             <div className="side-main custom-scroll">
                 <ul className="side-list">
@@ -78,6 +80,9 @@ function SideBar()
                     </li>
                     <li className="side-link">
                         <NavLink to={"/user/pl-account"}>PL Account</NavLink>
+                    </li>
+                    <li className="side-link">
+                        <NavLink to={"/login"}>Logout</NavLink>
                     </li>
                 </ul>
             </div>

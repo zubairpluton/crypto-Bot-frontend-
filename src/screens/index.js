@@ -1,3 +1,4 @@
+import Login from "./Login";
 import Activity from "./Activity";
 import Portfolio from "./Portfolio";
 import ProfitLoss from "./ProfitLoss";
@@ -20,6 +21,7 @@ import PLAccount from "./UserPanel/PLAccount";
 import PaidHistory from "./UserPanel/PaidHistory";
 import UserDashboard from "./UserPanel/UserDashboard";
 export{
+    Login,
     Activity,
     Portfolio,
     ProfitLoss,

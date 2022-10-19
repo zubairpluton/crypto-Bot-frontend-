@@ -12,12 +12,12 @@ export default function PieChart() {
         },
         fillColor: '#FEB019',
         labels: labels,
-        colors: ['#17963B', '#B00000'],
+        colors: ['#2AB48F', '#E06161'],
         responsive: [{
             breakpoint: 480,
             options: {
                 chart: {
-                    width: 200
+                    width: '100%'
                 },
                 legend: {
                     position: 'bottom'
@@ -35,7 +35,7 @@ export default function PieChart() {
     }, [])
     return <div className='pie-chart-main'>
         <div className="chart-filter">
-            <ul className="ul">
+            <ul className="ul custom-scroll">
                 <li>
                     <a href="javascript::void(0)" className="active">Daily</a>
                 </li>

@@ -4,6 +4,7 @@ import {Col, Container, Dropdown, Form, Row} from 'react-bootstrap'
 import { Questions } from "components"
 
 function UserStatistics() {
+    const [tab,setTab] = useState('open');
     return <>
         <div className="dashboard-main custom-scroll">
             <div className="section">
@@ -11,10 +12,10 @@ function UserStatistics() {
                     <div className="profit-loss-tab mb-5">
                         <ul className="justify-content-start">
                             <li>
-                                <a href={'#'} className="active">Open Orders</a>
+                                <a href={'#'} className={tab == "open" && "active"} onClick={()=>setTab('open')}>Open Orders</a>
                             </li>
                             <li>
-                                <a href={'#'}>Close Orders</a>
+                                <a href={'#'} className={tab == "close" && "active"} onClick={()=>setTab('close')}>Close Orders</a>
                             </li>
                         </ul>
                     </div>

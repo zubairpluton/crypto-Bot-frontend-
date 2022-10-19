@@ -2,18 +2,19 @@ import { useEffect, useState } from "react"
 import { NavLink } from "react-router-dom"
 import { Col, Container, Dropdown, Form, Row } from 'react-bootstrap'
 import TradingViewWidget, { Themes } from 'react-tradingview-widget';
-import { BotProfitPieChart, PaidHistoryTabs } from "components";
+import { AssetAllocation, BotProfitPieChart, DailyProfit, PaidHistoryTabs, ProfitDistribution, TotalProfit } from "components";
 import { imageURL } from "hooks";
 import useLocalStorage from "hooks/useLocalStorage";
+import Winrate from "components/Winrate";
 
 function UserDashboard() {
-    const [role,setRole] = useLocalStorage('role','user');
-    useEffect(()=>{
-        if(role == 'admin'){
-            setRole('user')
-            window.location.reload();
-        }
-    },[role])
+    // const [role,setRole] = useLocalStorage('role','user');
+    // useEffect(()=>{
+    //     if(role == 'admin'){
+    //         setRole('user')
+    //         window.location.reload();
+    //     }
+    // },[role])
     return <>
         <div className="dashboard-main custom-scroll">
             <div className="section">
@@ -68,7 +69,7 @@ function UserDashboard() {
                                     <a href='#' className='gray-anchor'>Updated each hour</a>
                                 </div>
                                 <div className="chart-main">
-                                    <img src={imageURL('total-profit.png')} className="chart-img"/>
+                                    <TotalProfit/>
                                 </div>
                             </div>
                         </Col>
@@ -90,7 +91,7 @@ function UserDashboard() {
                                     <a href='#' className='gray-anchor'>Updated on real time</a>
                                 </div>
                                 <div className="chart-main">
-                                    <img src={imageURL('daily-profit.png')} className="chart-img"/>
+                                    <DailyProfit/>
                                 </div>
                             </div>
                         </Col>
@@ -102,7 +103,7 @@ function UserDashboard() {
                                     <a href='#' className='gray-anchor'>Updated on real time</a>
                                 </div>
                                 <div className="chart-main">
-                                    <img src={imageURL('profit-distribution.png')} className="chart-img"/>
+                                    <ProfitDistribution/>
                                 </div>
                             </div>
                         </Col>
@@ -114,7 +115,8 @@ function UserDashboard() {
                                     <a href='#' className='gray-anchor'>Updated each hour</a>
                                 </div>
                                 <div className="chart-main">
-                                    <img src={imageURL('winrate.png')} className="chart-img"/>
+                                    {/* <img src={imageURL('winrate.png')} className="chart-img"/> */}
+                                    <Winrate/>
                                 </div>
                             </div>
                         </Col>
@@ -126,7 +128,7 @@ function UserDashboard() {
                                     <a href='#' className='gray-anchor'>Details</a>
                                 </div>
                                 <div className="chart-main">
-                                    <img src={imageURL('asset-allocation.png')} className="chart-img"/>
+                                    <AssetAllocation/>
                                 </div>
                             </div>
                         </Col>

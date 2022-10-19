@@ -11,6 +11,11 @@ import Questions from "./Questions";
 import PaidHistoryPieChart from "./PaidHistoryPieChart";
 import PaidHistoryTabs from "./PaidHistoryTabs";
 import BotProfitPieChart from "./BotProfitPieChart";
+import Winrate from "./Winrate";
+import AssetAllocation from "./AssetAllocation";
+import ProfitDistribution from "./ProfitDistribution";
+import DailyProfit from "./DailyProfit";
+import TotalProfit from "./TotalProfit";
 export{
     Header,
     SideBar,
@@ -24,5 +29,10 @@ export{
     Questions,
     PaidHistoryPieChart,
     PaidHistoryTabs,
-    BotProfitPieChart
+    BotProfitPieChart,
+    Winrate,
+    AssetAllocation,
+    ProfitDistribution,
+    DailyProfit,
+    TotalProfit
 }

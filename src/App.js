@@ -1,23 +1,24 @@
 import logo from './logo.svg';
 import './App.css';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import { Prediction,Dashboard,ApiSetting, Automatic, BotConfig, CoinMarket, Activity, Manual, Market, PaidHistory, PLAccount, Portfolio, ProfitLoss, Satistics, Trailing, UserDashboard, UserManagement, UserStatistics, AdminPLAccount, UserProfit } from 'screens';
+import { BrowserRouter, Route, Routes, useLocation } from 'react-router-dom';
+import { Prediction,Dashboard,ApiSetting, Automatic, BotConfig, CoinMarket, Activity, Manual, Market, PaidHistory, PLAccount, Portfolio, ProfitLoss, Satistics, Trailing, UserDashboard, UserManagement, UserStatistics, AdminPLAccount, UserProfit, Login } from 'screens';
 import { SideBar, UserSideBar } from './components';
 import { useScript } from './hooks';
 import useLocalStorage from 'hooks/useLocalStorage';
 
 function App() {
-  const [role,setRole] = useLocalStorage('role','admin');
+  const [role,setRole] = useLocalStorage('role','');
+  const loc = useLocation();
   return (
     <main className='custom-main'>
-      <BrowserRouter>
-      {
-        role == 'admin' ?
-        <SideBar/>
-        :
-        <UserSideBar/>
-      }
+        {
+          loc.pathname != '/login' && (role == 'admin' ?
+          <SideBar/>
+          :
+          <UserSideBar/>)
+        }
         <Routes>
+            <Route path='/login' element={<Login/>} />
             <Route exact path='/' element={<Dashboard/>} />
             <Route path='/activity' element={<Activity />} />
             <Route path='/portfolio' element={<Portfolio />} />
@@ -39,7 +40,6 @@ function App() {
             <Route path='/user/paid-history' element={<PaidHistory />} />
             <Route path='/user/dashboard' element={<UserDashboard />} />
         </Routes>
-      </BrowserRouter>
     </main>
   );
 }

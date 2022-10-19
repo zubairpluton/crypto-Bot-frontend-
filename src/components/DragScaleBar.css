@@ -32,4 +32,5 @@
     display: block;
     height: 15px;
     background-color: #2A2A2A !important;
+    max-width: 100%;
 }
