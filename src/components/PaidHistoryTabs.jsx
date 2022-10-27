@@ -1,17 +1,17 @@
 import useLocalStorage from "hooks/useLocalStorage";
 import { NavLink } from "react-router-dom"
 
-export default function PaidHistoryTabs()
+export default function PaidHistoryTabs({tab,setTab})
 {
     const [role,setRole] = useLocalStorage('role','');
     return <>
         <div className="bot-tabs mt-3 mb-3">
             <ul >
                 <li>
-                    <a className={"active"} href="#">ETH</a>
+                    <a className={tab == "eth" && "active"} onClick={()=>setTab('eth')} href="#">ETH</a>
                 </li>
                 <li>
-                    <a className={""} href="#">BTC</a>
+                    <a className={tab == "btc" && "active"} onClick={()=>setTab('btc')} href="#">BTC</a>
                 </li>
             </ul>
         </div>

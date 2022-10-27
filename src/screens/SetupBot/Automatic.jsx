@@ -6,6 +6,8 @@ import TradingViewWidget, { Themes } from 'react-tradingview-widget';
 import { AutoTabs } from "../../components";
 
 function Automatic() {
+    const [box,setBox] = useState('low');
+
     return <>
         <div className="dashboard-main custom-scroll">
             <div className="section">
@@ -15,7 +17,7 @@ function Automatic() {
                     <Container fluid>
                         <Row className="gy-5">
                             <Col lg={4} md={6}>
-                                <div className="bot-box">
+                                <div className={"bot-box pointer "+(box == 'low' && 'active')} onClick={()=>setBox('low')}>
                                     <h4 className="heading">Low Risk</h4>
                                     <div className="inner-main">
                                         <div className="inner">
@@ -30,7 +32,7 @@ function Automatic() {
                                 </div>
                             </Col>
                             <Col lg={4} md={6}>
-                                <div className="bot-box">
+                                <div className={"bot-box pointer "+(box == 'moderate' && 'active')} onClick={()=>setBox('moderate')}>
                                     <h4 className="heading">Moderate Risk</h4>
                                     <div className="inner-main">
                                         <div className="inner">
@@ -45,7 +47,7 @@ function Automatic() {
                                 </div>
                             </Col>
                             <Col lg={4} md={6}>
-                                <div className="bot-box">
+                                <div className={"bot-box pointer "+(box == 'high' && 'active')} onClick={()=>setBox('high')}>
                                     <h4 className="heading">High Risk</h4>
                                     <div className="inner-main">
                                         <div className="inner">

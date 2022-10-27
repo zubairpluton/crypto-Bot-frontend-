@@ -421,6 +421,10 @@ justify-content: center;
     box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.6);
     border-radius: 25px;
     padding: 2rem 2rem;
+    border: 1px solid #232323;
+}
+.bot-box.active{
+    border: 1px solid var(--primary);
 }
 .bot-box .heading{
     color: var(--primary);
@@ -522,6 +526,17 @@ background-color: #161616;
     box-shadow: none;
     border-color: var(--primary) !important;
 }
+.custom-select{
+    background-color: #323232 !important;
+    border: 1px solid #D9D9D9 !important;
+    border-radius: 0px !important;
+    padding: 0.6rem 1rem;
+    color: var(--white) !important;
+}
+.custom-select:focus{
+    box-shadow: none;
+    border-color: var(--primary) !important;
+}
 .normal-box{
     background: #232323;
     border-radius: 15px;
@@ -576,6 +591,10 @@ background-color: #161616;
 .bot-status-filter .custom-input{
     background: #232323 !important;
     border: none !important;
+}
+.bot-status-filter .custom-select{
+    border: none !important;
+    background-color: #232323 !important;
 }
 .low-section{
     display: flex;
@@ -842,4 +861,7 @@ cursor: pointer;
 }
 .form-logo-main img{
     width: 140px;
+}
+.pointer{
+    cursor: pointer;
 }

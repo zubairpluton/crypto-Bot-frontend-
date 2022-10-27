@@ -5,11 +5,13 @@ import TradingViewWidget, { Themes } from 'react-tradingview-widget';
 import { PaidHistoryPieChart, PaidHistoryTabs, Questions } from "components";
 
 function PaidHistory() {
+    const [tab,setTab] = useState('eth')
+
     return <>
         <div className="dashboard-main custom-scroll">
             <div className="section">
                 <Container fluid>
-                    <PaidHistoryTabs/>
+                    <PaidHistoryTabs tab={tab} setTab={setTab}/>
                     <Row className="gy-3">
                         <Col lg={12}>
                             <div className="normal-box">

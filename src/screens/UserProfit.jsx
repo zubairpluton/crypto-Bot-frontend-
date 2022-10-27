@@ -6,11 +6,13 @@ import { DailyProfit, PaidHistoryTabs, TotalProfit, Winrate } from "components";
 import { imageURL } from "hooks";
 
 function UserProfit() {
+    const [tab,setTab] = useState('eth')
+
     return <>
         <div className="dashboard-main custom-scroll">
             <div className="section">
                 <Container fluid>
-                    <PaidHistoryTabs />
+                    <PaidHistoryTabs tab={tab} setTab={setTab}/>
                     <Row className="gy-3">
                        
                         <Col lg={12}>

@@ -13,16 +13,17 @@ function Prediction() {
 
     ]
     );
+    const [tab,setTab] = useState('btc')
     return <>
         <div className="dashboard-main custom-scroll">
             <div className="section">
                 <div className="bot-tabs ">
                     <ul className="justify-content-start">
                         <li>
-                            <a className={"active"} href="#">BTC</a>
+                            <a className={tab == "btc" && "active"} onClick={()=>setTab('btc')} href="#">BTC</a>
                         </li>
                         <li>
-                            <a className={""} href="#">ETH</a>
+                            <a className={tab == "eth" && "active"} onClick={()=>setTab('eth')} href="#">ETH</a>
                         </li>
                     </ul>
                 </div>

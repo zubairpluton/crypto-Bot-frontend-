@@ -1,6 +1,6 @@
 import { Col, Row } from "react-bootstrap"
 
-export default function Questions()
+export default function Questions({type})
 {
     return <>
         <Row className="gy-3">
@@ -10,7 +10,7 @@ export default function Questions()
                         <p className="text-gray f-18 mb-0">Q1</p>
                         <h3>BTC/USDT</h3>
                         <div className="mb-2">
-                            <i class="fa-solid fa-circle text-green"></i>
+                            <i className={"fa-solid fa-circle "+(type == 'close-order' ? 'text-red' : 'text-green')}></i>
                             <span className="text-gray"> 6D 12H 51M</span>
                         </div>
                         <p className="primary-text f-18  mb-0">Max Investment reached. Adjust the limit to continue the DCA.</p>
@@ -27,7 +27,9 @@ export default function Questions()
                             </div>
                         </div>
                     </div>
-                    <ul className="statistic-list">
+                    {
+                        type != 'close-order' &&
+                        <ul className="statistic-list">
                         <li>
                             <span>Price Range (USDT)</span>
                             <span>13290-24681</span>
@@ -41,6 +43,8 @@ export default function Questions()
                             <span>0.29%-0.68%</span>
                         </li>
                     </ul>
+                    }
+                    
                 </div>
             </Col>
             <Col className="col-12">
@@ -49,7 +53,7 @@ export default function Questions()
                         <p className="text-gray f-18 mb-0">Q2</p>
                         <h3>ETH/USDT</h3>
                         <div className="mb-2">
-                            <i class="fa-solid fa-circle text-green"></i>
+                        <i className={"fa-solid fa-circle "+(type == 'close-order' ? 'text-red' : 'text-green')}></i>
                             <span className="text-gray"> 6D 12H 51M</span>
                         </div>
                         <p className="primary-text f-18 mb-0">0 arbitrages in 24 hours/Total 0 arbitrages</p>
@@ -66,7 +70,9 @@ export default function Questions()
                             </div>
                         </div>
                     </div>
-                    <ul className="statistic-list">
+                    {
+                        type != 'close-order' &&
+                        <ul className="statistic-list">
                         <li>
                             <span>Price Range (USDT)</span>
                             <span>13290-24681</span>
@@ -80,6 +86,7 @@ export default function Questions()
                             <span>0.29%-0.68%</span>
                         </li>
                     </ul>
+                    }
                 </div>
             </Col>
         </Row>
