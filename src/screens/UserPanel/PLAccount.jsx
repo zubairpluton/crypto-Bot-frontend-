@@ -6,11 +6,12 @@ import { DailyProfit, PaidHistoryTabs, ProfitDistribution, TotalProfit, Winrate 
 import { imageURL } from "hooks";
 
 function PLAccount() {
+    const [tab,setTab] = useState('eth')
     return <>
         <div className="dashboard-main custom-scroll">
             <div className="section">
                 <Container fluid>
-                    <PaidHistoryTabs />
+                    <PaidHistoryTabs tab={tab} setTab={setTab}/>
                     <Row className="gy-3">
                         <Col lg={12}>
                             <div className="normal-box">

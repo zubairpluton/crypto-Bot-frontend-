@@ -60,7 +60,17 @@
 
 }
 
+
 /* Extra Small Devices, Phones */
+@media  (max-width : 400px) {
+  .invest-profit{
+    flex-direction: column;
+  }
+  .normal-box .inner-main .inner{
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+}
 @media  (max-width : 480px) {
   .mobile-none{
     display: none !important;

@@ -8,7 +8,12 @@ import DragScaleBar from '../../components/DragScaleBar'
 import RangeSlider from 'react-bootstrap-range-slider';
 function BotConfig() {
     const [show, setShow] = useState(false);
-
+    const [box,setBox] = useState('low');
+    const [tab,setTab] = useState('binance');
+    const [tab1,setTab1] = useState('eth');
+    const days = Array.from(Array(30).keys());
+    const [investment,setInvestment] = useState(1000000000)
+    const [stopLoss,setStopLoss] = useState(1000000000)
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
     const [isOn,setIsOn] = useState(true);
@@ -35,24 +40,29 @@ function BotConfig() {
                 <div className="bot-status-filter">
                     <div className="form-group">
                         <label id="investment">Select Investment</label>
-                        <input type="text" id="investment" className="form-control custom-input" value={1000000000}/>
+                        <input type="text" id="investment" className="form-control custom-input" value={investment} onChange={(e)=>setInvestment(e.target.value)}/>
                     </div>
+                 
                     <div className="form-group">
                         <label id="days">Select Days</label>
-                        <select name="" id="days" className="form-control custom-input">
-                            <option value="">30</option>
+                        <select name="" id="days" className="form-select custom-select">
+                            {
+                                days.map((day,key)=>{
+                                    return <option value={key+1}>{key+1}</option>
+                                })
+                            }
                         </select>
                     </div>
                     <div className="form-group">
                         <label id="stoploss">Stop/Loss</label>
-                        <input type="text" id="stoploss" className="form-control custom-input" value={1000000000}/>
+                        <input type="text" id="stoploss" className="form-control custom-input" value={stopLoss} onChange={(e)=>setStopLoss(e.target.value)}/>
                     </div>
                 </div>
                 <div className="mt-5">
                     <Container fluid>
                         <Row className="gy-5">
                             <Col lg={4} md={6}>
-                                <div className="bot-box">
+                                <div className={"bot-box pointer "+(box == 'low' && 'active')} onClick={()=>setBox('low')}>
                                     <h4 className="heading">Low Risk</h4>
                                     <div className="inner-main">
                                         <div className="inner">
@@ -67,7 +77,7 @@ function BotConfig() {
                                 </div>
                             </Col>
                             <Col lg={4} md={6}>
-                                <div className="bot-box">
+                                <div className={"bot-box pointer "+(box == 'moderate' && 'active')} onClick={()=>setBox('moderate')}>
                                     <h4 className="heading">Moderate Risk</h4>
                                     <div className="inner-main">
                                         <div className="inner">
@@ -82,7 +92,7 @@ function BotConfig() {
                                 </div>
                             </Col>
                             <Col lg={4} md={6}>
-                                <div className="bot-box">
+                                <div className={"bot-box pointer "+(box == 'high' && 'active')} onClick={()=>setBox('high')}>
                                     <h4 className="heading">High Risk</h4>
                                     <div className="inner-main">
                                         <div className="inner">
@@ -100,20 +110,20 @@ function BotConfig() {
                         <div className="bot-tabs mt-5">
                             <ul>
                                 <li>
-                                    <a className={"active"} href="#">Binance</a>
+                                    <a className={tab == "binance" && "active"} onClick={()=>setTab('binance')} href="#">Binance</a>
                                 </li>
                                 <li>
-                                    <a className={""} href="#">KuCoin</a>
+                                    <a className={tab == "kucoin" && "active"} onClick={()=>setTab('kucoin')} href="#">KuCoin</a>
                                 </li>
                             </ul>
                         </div>
                         <div className="bot-tabs mt-4">
                             <ul>
                                 <li>
-                                    <a className={""} href="#">BTC</a>
+                                    <a className={tab1 == "btc" && "active"} onClick={()=>setTab1('btc')} href="#">BTC</a>
                                 </li>
                                 <li>
-                                    <a className={"active"} href="#">ETH</a>
+                                    <a className={tab1 == "eth" && "active"} onClick={()=>setTab1('eth')} href="#">ETH</a>
                                 </li>
                             </ul>
                         </div>

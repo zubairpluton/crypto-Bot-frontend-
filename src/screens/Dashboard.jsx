@@ -7,13 +7,7 @@ import { imageURL } from "hooks";
 import useLocalStorage from "hooks/useLocalStorage";
 
 function Dashboard() {
-    // const [role,setRole] = useLocalStorage('role','admin');
-    // useEffect(()=>{
-    //     if(role == 'user'){
-    //         setRole('admin')
-    //         window.location.reload();
-    //     }
-    // },[role])
+    const [tab,setTab] = useState('binance')
     return <>
         <div className="dashboard-main custom-scroll">
             <div className="section">
@@ -21,10 +15,10 @@ function Dashboard() {
                 <div className="bot-tabs mt-3 mb-5">
                     <ul className="justify-content-start">
                         <li>
-                            <a className={"active"} href="#">Binance</a>
+                            <a className={tab == 'binance' && "active"} href="javascript::void(0);" onClick={()=>setTab('binance')}>Binance</a>
                         </li>
                         <li>
-                            <a className={""} href="#">KuCoin</a>
+                            <a className={tab == 'kucoin' && "active"} href="javascript::void(0);" onClick={()=>setTab('kucoin')}>KuCoin</a>
                         </li>
                     </ul>
                 </div>
