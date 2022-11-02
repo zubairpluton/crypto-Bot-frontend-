@@ -15,7 +15,7 @@ function UserProfit() {
                     <PaidHistoryTabs tab={tab} setTab={setTab}/>
                     <Row className="gy-3">
                        
-                        <Col lg={12}>
+                        <Col lg={6}>
                             <div className="normal-box mt-4">
                                 <div className="chart-filter">
                                     <ul className="ul">
@@ -39,7 +39,7 @@ function UserProfit() {
                                 </div>
                             </div>
                         </Col>
-                        <Col lg={12}>
+                        <Col lg={6}>
                             <div className="normal-box mt-4">
                                 <div className="chart-filter">
                                     <ul className="ul">

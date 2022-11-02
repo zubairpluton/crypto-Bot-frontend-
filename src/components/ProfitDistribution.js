@@ -9,14 +9,14 @@ export default function ProfitDistribution() {
         {
           data: [
             {
-              x: 'Spot Grid',
+              x: 'BTC',
               y: [
                 new Date('2019-03-02').getTime(),
                 new Date('2019-03-04').getTime()
               ]
             },
             {
-              x: 'DCA',
+              x: 'ETH',
               y: [
                 new Date('2019-03-04').getTime(),
                 new Date('2019-03-08').getTime()
@@ -29,7 +29,7 @@ export default function ProfitDistribution() {
         colors: [ '#E06161'],
         fillColor: '#FEB019',
         chart: {
-        height: 350,
+        height: 200,
         type: 'rangeBar'
       },
       plotOptions: {

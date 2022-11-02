@@ -1,6 +1,6 @@
 import useLocalStorage from 'hooks/useLocalStorage'
 import { useState } from 'react'
-import { Link, NavLink } from 'react-router-dom'
+import { Link, NavLink, useLocation } from 'react-router-dom'
 import '../assets/css/sidebar.css'
 import {imageURL, useScript} from '../hooks'
 import CustomDropdown from './CustomDropdown'
@@ -8,6 +8,7 @@ function UserSideBar()
 {
     const [isShow,setIsShow] = useState(true);
     const [role,setRole] = useLocalStorage('role','user');
+    const location = useLocation();
     return <>
         <aside className={'custom-sidebar '+(isShow ? 'side-show' : 'side-hide')}>
             <div className="sidebar-close" onClick={()=>setIsShow(prevIsShow => !prevIsShow)}>
@@ -43,7 +44,7 @@ function UserSideBar()
                                 <NavLink to={"/market"}>Market</NavLink>
                             </li>
                             <li >
-                                <NavLink to={"/user/pl-account"}>PL Account</NavLink>
+                                <NavLink to={"/user/pl-account"} className={location.pathname == "/user/paid-history" && "active"}>PL Account</NavLink>
                             </li>
                             <li >
                                 <NavLink to={"/user/prediction"}>Prediction</NavLink>
