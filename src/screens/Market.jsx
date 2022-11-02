@@ -5,6 +5,8 @@ import { imageURL } from "../hooks"
 import TradingViewWidget, { Themes } from 'react-tradingview-widget';
 
 function Market() {
+    const [coin,setCoin] = useState('btc')
+
     return <>
         <div className="dashboard-main custom-scroll">
             <div className="section">
@@ -13,7 +15,7 @@ function Market() {
                         <Col lg={6} md={6}>
                             <div className="box-main">
                                 <img src={imageURL('bitcoin.png')} alt="Bitcoin" className="img"/>
-                                <div className="custom-box">
+                                <div className={"custom-box pointer "+(coin == "btc" && "box-active")} onClick={()=>setCoin('btc')}>
                                     <div className="flex-center">
                                         <img src={imageURL('btc.png')} alt="Bitcoin" />
                                         <h6>BTC</h6>
@@ -29,7 +31,7 @@ function Market() {
                         <Col lg={6} md={6}>
                         <div className="box-main">
                                 <img src={imageURL('ethereum.png')} alt="Ethereum" className="img"/>
-                                <div className="custom-box">
+                                <div className={"custom-box pointer "+(coin == "eth" && "box-active")} onClick={()=>setCoin('eth')}>
                                 <div className="flex-center">
                                         <img src={imageURL('eth.png')} alt="ETH" />
                                         <h6>ETH</h6>
@@ -48,7 +50,7 @@ function Market() {
                 <TradingViewWidget
                            width= "100%"
                            height= "441"
-                           symbol= "BITSTAMP:BTCUSDT"
+                           symbol= {coin == "btc" ? "BITSTAMP:BTCUSDT" : "BITSTAMP:ETHUSDT"}
                            interval= "D"
                            timezone= "Etc/UTC"
                            theme= "dark"

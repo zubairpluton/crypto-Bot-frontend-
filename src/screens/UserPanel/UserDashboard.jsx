@@ -43,7 +43,7 @@ function UserDashboard() {
                                 </div>
                             </div>
                         </Col>
-                        <Col lg={12}>
+                        <Col lg={6}>
                             <div className="normal-box mt-4">
                                 <div className="chart-filter">
                                     <ul className="ul">
@@ -67,7 +67,7 @@ function UserDashboard() {
                                 </div>
                             </div>
                         </Col>
-                        <Col lg={12}>
+                        <Col lg={6}>
                             <div className="normal-box mt-4">
                                 <div className="chart-filter">
                                     <ul className="ul">

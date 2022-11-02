@@ -3,7 +3,7 @@ import { useEffect, useRef } from 'react';
 
 export default function AssetAllocation() {
     const isRendered = useRef(null);
-    const labels = ['ETH','USDT(Spot)'];
+    const labels = ['ETH','BTC'];
     var options = {
         series: [95, 5],
         chart: {

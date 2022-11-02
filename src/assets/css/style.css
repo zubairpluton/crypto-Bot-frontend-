@@ -865,3 +865,6 @@ cursor: pointer;
 .pointer{
     cursor: pointer;
 }
+.box-active{
+    border: 1px solid var(--primary);
+}

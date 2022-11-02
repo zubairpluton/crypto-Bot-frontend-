@@ -8,6 +8,7 @@ import useLocalStorage from "hooks/useLocalStorage";
 
 function Dashboard() {
     const [tab,setTab] = useState('binance')
+    const [coin,setCoin] = useState('btc')
     return <>
         <div className="dashboard-main custom-scroll">
             <div className="section">
@@ -26,7 +27,7 @@ function Dashboard() {
                         <Col lg={6} md={6}>
                             <div className="box-main">
                                 <img src={imageURL('bitcoin.png')} alt="Bitcoin" className="img"/>
-                                <div className="custom-box">
+                                <div className={"custom-box pointer "+(coin == "btc" && "box-active")} onClick={()=>setCoin('btc')}>
                                     <div className="flex-center">
                                         <img src={imageURL('btc.png')} alt="Bitcoin" />
                                         <h6>BTC</h6>
@@ -42,7 +43,7 @@ function Dashboard() {
                         <Col lg={6} md={6}>
                         <div className="box-main">
                                 <img src={imageURL('ethereum.png')} alt="Ethereum" className="img"/>
-                                <div className="custom-box">
+                                <div className={"custom-box pointer "+(coin == "eth" && "box-active")} onClick={()=>setCoin('eth')}>
                                 <div className="flex-center">
                                         <img src={imageURL('eth.png')} alt="ETH" />
                                         <h6>ETH</h6>
@@ -60,7 +61,7 @@ function Dashboard() {
                 <TradingViewWidget
                            width= "100%"
                            height= "441"
-                           symbol= "BITSTAMP:BTCUSDT"
+                           symbol= {coin == "btc" ? "BITSTAMP:BTCUSDT" : "BITSTAMP:ETHUSDT"}
                            interval= "D"
                            timezone= "Etc/UTC"
                            theme= "dark"
@@ -93,7 +94,7 @@ function Dashboard() {
                                 </div>
                             </div>
                         </Col>
-                        <Col lg={12}>
+                        <Col lg={6}>
                             <div className="normal-box mt-4">
                                 <div className="chart-filter">
                                     <ul className="ul">
@@ -117,7 +118,7 @@ function Dashboard() {
                                 </div>
                             </div>
                         </Col>
-                        <Col lg={12}>
+                        <Col lg={6}>
                             <div className="normal-box mt-4">
                                 <div className="chart-filter">
                                     <ul className="ul">
